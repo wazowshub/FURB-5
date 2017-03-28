@@ -1,0 +1,36 @@
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\bin\Debug\Servidores.exe.config
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\bin\Debug\Servidores.exe
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\bin\Debug\Servidores.pdb
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\bin\Debug\Core.dll
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\bin\Debug\Core.pdb
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csprojResolveAssemblyReference.cache
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\obj\Debug\Servidores.Servidores.resources
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\obj\Debug\Servidores.Properties.Resources.resources
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csproj.GenerateResource.Cache
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\obj\Debug\Servidores.exe
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Servidores\obj\Debug\Servidores.pdb
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\bin\Debug\Servidores.exe.config
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\obj\Debug\Servidores.exe
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\obj\Debug\Servidores.pdb
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\obj\Debug\Servidores.Servidores.resources
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\obj\Debug\Servidores.Properties.Resources.resources
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\obj\Debug\Servidores.csproj.GenerateResource.Cache
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\bin\Debug\Servidores.exe
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\bin\Debug\Servidores.pdb
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\bin\Debug\Core.dll
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\bin\Debug\Core.pdb
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Servidores\obj\Debug\Servidores.csprojResolveAssemblyReference.cache
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\bin\Debug\Servidores.exe.config
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\bin\Debug\Servidores.exe
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\bin\Debug\Servidores.pdb
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\bin\Debug\Core.dll
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\bin\Debug\Core.pdb
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\obj\Debug\Servidores.csprojResolveAssemblyReference.cache
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\obj\Debug\Servidores.Servidores.resources
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\obj\Debug\Servidores.Properties.Resources.resources
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\obj\Debug\Servidores.csproj.GenerateResource.Cache
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\obj\Debug\Servidores.exe
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores\obj\Debug\Servidores.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Servidores.exe.config
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.exe
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.pdb

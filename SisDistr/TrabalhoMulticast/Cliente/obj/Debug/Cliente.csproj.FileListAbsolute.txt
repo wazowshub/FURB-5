@@ -1,0 +1,44 @@
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\bin\Debug\TrabalhoMulticast.exe.config
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\bin\Debug\TrabalhoMulticast.exe
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\bin\Debug\TrabalhoMulticast.pdb
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\bin\Debug\Core.dll
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\bin\Debug\Core.pdb
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\obj\Debug\TrabalhoMulticast.ClientForm.resources
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\obj\Debug\TrabalhoMulticast.Properties.Resources.resources
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\obj\Debug\Cliente.csproj.GenerateResource.Cache
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\obj\Debug\TrabalhoMulticast.exe
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\TrabalhoMulticast\obj\Debug\TrabalhoMulticast.pdb
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\bin\Debug\Core.dll
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\bin\Debug\Core.pdb
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\obj\Debug\Cliente.csproj.GenerateResource.Cache
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\obj\Debug\Cliente.ClientForm.resources
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\bin\Debug\Cliente.exe
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\bin\Debug\Cliente.pdb
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\obj\Debug\Cliente.exe
+C:\Users\Maicon\Documents\Faculdade\Sistemas Distribuídos\TrabalhoMulticast\TrabalhoMulticast\Cliente\obj\Debug\Cliente.pdb
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\obj\Debug\Cliente.ClientForm.resources
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\obj\Debug\Cliente.csproj.GenerateResource.Cache
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\obj\Debug\Cliente.exe
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\obj\Debug\Cliente.pdb
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\bin\Debug\Cliente.exe
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\bin\Debug\Cliente.pdb
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\bin\Debug\Core.dll
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\maiconsilva\Documents\Visual Studio 2015\Projects\Cliente\bin\Debug\Core.pdb
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\bin\Debug\Cliente.exe
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\bin\Debug\Cliente.pdb
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\bin\Debug\Core.dll
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\bin\Debug\Core.pdb
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.ClientForm.resources
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.csproj.GenerateResource.Cache
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.exe
+C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.pdb
