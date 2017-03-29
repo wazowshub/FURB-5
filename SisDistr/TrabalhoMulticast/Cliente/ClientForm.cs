@@ -48,7 +48,10 @@ namespace Cliente
 			var ip = ListaServidores.SelectedRows[0].Cells[1].Value.ToString();
 			var porta = ListaServidores.SelectedRows[0].Cells[2].Value.ToString();
 
-			c.IniciaBackUp(ip,porta);
+			if (ip != "" && porta != "")
+			{
+				c.IniciaBackUp(ip, porta);
+			}
 		}
 	}
 }

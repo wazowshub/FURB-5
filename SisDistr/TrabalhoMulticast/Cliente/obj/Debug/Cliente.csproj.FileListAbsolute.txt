@@ -42,3 +42,14 @@ C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\ob
 C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.csproj.GenerateResource.Cache
 C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.exe
 C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Cliente\obj\Debug\Cliente.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Cliente.exe
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Cliente.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Core.dll
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Core.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.ClientForm.resources
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.csproj.GenerateResource.Cache
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.exe
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.pdb

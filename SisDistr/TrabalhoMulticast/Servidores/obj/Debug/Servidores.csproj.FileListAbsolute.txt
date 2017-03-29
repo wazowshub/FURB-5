@@ -34,3 +34,11 @@ C:\Users\WazoNote\Documents\Faculdade\Sistemas distribuídos\Projects\Servidores
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Servidores.exe.config
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.exe
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Servidores.exe
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Servidores.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Core.dll
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Core.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.Servidores.resources
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.Properties.Resources.resources
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csproj.GenerateResource.Cache
+C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csprojResolveAssemblyReference.cache
