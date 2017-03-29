@@ -1,0 +1,78 @@
+﻿Trabalho 02 - Engenharia de Software
+
+1 - Loja online de camisetas.
+2 - a) - O dono da loja deseja um site eCommerce para venda de camisetas.
+	b) - Produção das camisetas -> Encomenda as estampas com o fornecedor -> Envia as estampadas para o fornecedor de camisas -> Realiza o cadastro no estoque -> Realiza a venda da camiseta -> Encaminha para entrega do produto -> Camisa entregue.
+	c)    i - RF01: O sistema deverá permitir incluir cliente.
+	   	    - RF02: O sistema deverá permitir alterar cliente.
+	        - RF04: O sistema deverá permitir consultar cliente.
+	        - RF05: O sistema deverá permitir incluir produto.
+	        - RF06: O sistema deverá permitir alterar produto.
+	        - RF07: O sistema deverá permitir excluir produto.
+	        - RF08: O sistema deverá permitir consultar produto.
+	        - RF09: O sistema deverá permitir incluir fornecedor.
+	        - RF10: O sistema deverá permitir alterar fornecedor.
+	        - RF11: O sistema deverá permitir excluir fornecedor.
+	        - RF12: O sistema deverá permitir consultar fornecedor.
+	        - RF13: O sistema deverá permitir incluir venda.
+	        - RF14: O sistema deverá permitir consultar venda.
+	        - RF15: O sistema deverá permitir incluir produto da venda.
+	        - RF16: O sistema deverá permitir alterar produto da venda.
+	        - RF17: O sistema deverá permitir consultar produto da venda.
+	        - RF18: O sistema deverá permitir excluir produto da venda.
+	        - RF19: O sistema deverá permitir cadastrar solicitação ao fornecedor.
+	        - RF19: O sistema deverá permitir consultar solicitação ao fornecedor.
+	        - RF20: O sistema deverá permitir selecionar uma forma de pagamando para a venda.
+		 ii - RNF01: O banco de dados utilizado será Oracle.
+	   	    - RNF02: O servidor do sistema será implementado com Servlets Java. 
+	        - RNF03: O sistema terá autenticação para o cliente efetuar compras.
+	        - RNF04: A parte client do sistema será construído para rodar em ambiente web e terá um design responsivo.
+	        - RNF05: O sistema será compatível com os browers: Internet Explorer, Google Chrome, Mozilla, Safari e Opera.
+	        - RNF06: O sistema funcionará em três camadas: cliente, servidor e banco de dados.
+	    iii 1 - a) Cenário 1 - Cadastro do cliente. O usuário-cliente poderá cadastrar, consultar ou alterar seu perfil.
+	    						 						- Realizar seu cadastro (Pré: Informar todas as informações obrigatórias. Pós: Usuário cadastrado.)
+														- Rota principal: Cadastrar - Cadastro efetuado com sucesso!
+														- Rota alternativa: Cancelar - Volta para pagina principal.
+														- Rota excessão: Cadastrar - Informe todos os dados obrigatórios.
+	    						 						- Editar seu perfil. (Pré: Ter usuário cadastrado. Pós: Usuário alterado com sucesso)
+	    						 						- Consultar seu perfil. (Pós: Usuários exibidos)
+	    		   Cenário 2 - Cadastro do produto. O usuário-moderador poderá cadastrar, consultar, alterar ou excluir produtos.
+	    		   										- Cadastrar novo produto. (Pré: Informar todas as informações obrigatórias. Pós: Produto cadastrado.)
+														- Rota principal: Cadastrar - Cadastro efetuado com sucesso!
+														- Rota alternativa: Cancelar - Volta para pagina principal.
+														- Rota excessão: Cadastrar - Informe todos os dados obrigatórios.
+	    		   										- Consultar produto cadastrado. (Pós: Produtos exibidos)
+	    		   										- Alterar produto cadastrado. (Pré: Ter produto cadastrado. Pós: Produto alterado com sucesso)
+														- Rota principal: Alterar - Produto alterado com sucesso!
+														- Rota alternativa: Cancelar - Volta para a consulta.
+														- Rota excessão: Alterar - Nenhum produto selecionado.
+	    		   										- Remover produto. (Pré: Produto existente. Pós: Produto removido)
+	    		   Cenário 3 - Cadastro do fornecedor. O usuário-moderador poderá cadastrar, editar, consultar e excluir fornecedores.
+	    		   										- Cadastrar novo fornecedor. (Pré: Informar todas as informações obrigatórias. Pós: Fornecedor cadastrado.)
+														- Rota principal: Cadastrar - Cadastro efetuado com sucesso!
+														- Rota alternativa: Cancelar - Volta para pagina principal.
+														- Rota excessão: Cadastrar - Informe todos os dados obrigatórios.
+	    		   										- Consultar fornecedor cadastrado.(Pós: Fornecedores exibidos)
+	    		   										- Alterar fornecedor cadastrado. (Pré: Ter fornecedor cadastrado. Pós: Fornecedor alterado com sucesso)
+														- Rota principal: Alterar - Fornecedor alterado com sucesso!
+														- Rota alternativa: Cancelar - Volta para a consulta.
+														- Rota excessão: Alterar - Nenhum fornecedor selecionado.
+	    		   										- Excluir fornecedor. (Pré: Fornecedor existente. Pós: Fornecedor removido)
+	    		   Cenário 4 - Efetuação da compra. O usuário-cliente poderá iniciar um compra. Na venda, poderá incluir, alterar, consultar ou excluir produtos do carrinho. O usuário-cliente poderá, também, consultar sua compra.
+	    		   										- Cadastrar nova compra. (Pré: Usuário existente, produtos existentes. Pós: Compra cadastrada)
+														- Rota principal: Cadastrar - Cadastro efetuado com sucesso!
+														- Rota alternativa: Cancelar - Volta para pagina principal.
+														- Rota excessão: Cadastrar - Informe todos os dados obrigatórios.
+	    		   										- Incluir produtos na compra. (Pré: Produtos cadastrados, usuário existente, compra aberta. Pós: Produto adicionado no carrinho)
+	    		   										- Editar produtos da compra. (Pré: Produto adicionado no carrinho. Pós: Produto do carrinho alterado)
+														- Rota principal: Alterar - Produto alterado com sucesso!
+														- Rota alternativa: Cancelar - Volta para a consulta.
+														- Rota excessão: Alterar - Nenhum produto selecionado.
+	    		   										- Consultar produtos da compra. (Pós: Produtos do carrinho exibidos)
+	    		   										- Excluir produtos da compra. (Pré: Produto adicionado no carrinho. Pós: Produto do carrinho excluido)
+	    		   										- Consultar compra cadastrada.  (Pós: Compras exibidos)
+	    		   										- Selecionar forma de pagamento para compra. (Pré: Usuário existente, produtos existentes. Pós: Modalidade de pagamento selecionada).
+	    		   Cenário 5 - Reposição de estoque. O usuário-moderador poderá solicitar de novos produtos para o estoque. O usuário-moderador e o usuário-fornecedor poderão consultar as solicitações.
+	    		   										- Ator-moderador: Cadastrar solicitação de estoque. (Pré: Fornecedor cadastrado, Moderador cadastrado. Pós: Solicitação cadastrada)
+	    		   										- Ator-moderador e ator-fornecedor: Consultar solicitação de estoque. (Pós: Exibir solicitações cadastradas)
+
