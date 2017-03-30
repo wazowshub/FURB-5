@@ -11,3 +11,7 @@ C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Core\bin\Debu
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Core\bin\Debug\Core.pdb
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Core\obj\Debug\Core.dll
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Core\obj\Debug\Core.pdb
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Core\bin\Debug\Core.dll
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Core\bin\Debug\Core.pdb
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Core\obj\Debug\Core.dll
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Core\obj\Debug\Core.pdb

@@ -45,12 +45,12 @@ namespace Cliente
 
 		private void Start_Click(object sender, EventArgs e)
 		{
-			var ip = ListaServidores.SelectedRows[0].Cells[1].Value.ToString();
-			var porta = ListaServidores.SelectedRows[0].Cells[2].Value.ToString();
+			var ip = ListaServidores.SelectedRows[0].Cells[1].Value;
+			var porta = ListaServidores.SelectedRows[0].Cells[2].Value;
 
-			if (ip != "" && porta != "")
+			if (ip != null && porta != null)
 			{
-				c.IniciaBackUp(ip, porta);
+				c.IniciaBackUp(ip.ToString(), porta.ToString());
 			}
 		}
 	}

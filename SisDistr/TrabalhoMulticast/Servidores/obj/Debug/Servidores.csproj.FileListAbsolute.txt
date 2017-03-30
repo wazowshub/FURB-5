@@ -42,3 +42,14 @@ C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\ob
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.Properties.Resources.resources
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csproj.GenerateResource.Cache
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csprojResolveAssemblyReference.cache
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Servidores.exe.config
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Servidores.exe
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Servidores.pdb
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Core.dll
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\bin\Debug\Core.pdb
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csprojResolveAssemblyReference.cache
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.Servidores.resources
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.Properties.Resources.resources
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.csproj.GenerateResource.Cache
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.exe
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Servidores\obj\Debug\Servidores.pdb

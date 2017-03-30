@@ -53,3 +53,14 @@ C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\D
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.csproj.GenerateResource.Cache
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.exe
 C:\Users\WazoNote\Documents\GitHub\FURB\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.pdb
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Cliente.exe.config
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Cliente.exe
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Cliente.pdb
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Core.dll
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\bin\Debug\Core.pdb
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.csprojResolveAssemblyReference.cache
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.ClientForm.resources
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.Properties.Resources.resources
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.csproj.GenerateResource.Cache
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.exe
+C:\Users\maiconsilva\Downloads\FURB-5-master\FURB-5-master\SisDistr\TrabalhoMulticast\Cliente\obj\Debug\Cliente.pdb
