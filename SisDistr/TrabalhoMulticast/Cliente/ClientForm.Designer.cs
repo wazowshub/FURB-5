@@ -99,6 +99,7 @@
 			// 
 			// Start
 			// 
+			this.Start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.Start.Location = new System.Drawing.Point(12, 527);
 			this.Start.Name = "Start";
 			this.Start.Size = new System.Drawing.Size(120, 23);
