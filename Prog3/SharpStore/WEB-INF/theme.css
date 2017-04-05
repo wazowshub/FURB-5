@@ -1,0 +1,209 @@
+.head	{
+	background: #820000;
+}
+
+body {
+	background-color: #820000;
+}
+
+.logo	{
+	background-color: white;
+}
+
+.login	{
+    transition-property: background-color;
+    transition-duration: 0.2s;
+	position: absolute;
+	width: 15%;
+	height: 65px;
+	right: 16%;
+	background-color: rgba(130, 0, 0, 0.5);
+    border-left: double white;
+    border-bottom: double white;
+    border-right: double white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}	
+
+.login ul	{
+    list-style-type: none;
+	margin: auto;
+	height: auto;
+}
+
+.login .item {
+    padding: 9px 9px 5px 9px;
+    border-radius: 50%;
+    background-color: white;
+    margin-bottom: 8%;
+    margin-top: 8%;
+}
+
+.login .item:hover {
+	padding: 11px 11px 7px 11px;
+	margin-left: 12px;
+	float: none;
+}
+
+.login:hover{
+	background-color: rgba(130, 0, 0, 0.8);
+}
+
+.login .item:first-of-type	{
+	float: left;
+	margin-left: 17px;
+}
+
+.login .item:last-of-type	{
+	float: right;
+	margin-right: 20px;
+	margin-left: 15px;
+}
+
+.login a {
+	font-size: 22px;
+	font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    text-decoration: none;
+	color: white;	
+	text-align: center;
+}
+
+.login ul li a:hover	{
+	color: #d80000;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.verticalLine {
+  background-color: white;
+  width: 10px;
+  height: 100px;
+  float: left;
+}
+
+.expand 	{
+	width: 100%;
+}
+
+.menu	{
+    border-top: 3px solid #820000;
+    border-bottom: 3px solid #820000;
+	height: 50px;
+	background-color: white;
+	width: 100%;
+	z-index: 1;
+}
+
+.fixed	{
+	position: fixed;
+	top: 0;
+	border-top: 0px;
+}
+
+.icon	{
+	display: none;
+}
+
+.menu ul	{
+    list-style-type: none;
+    -webkit-padding-start: 0px;
+	width: 70%;
+	margin: auto;
+}
+
+.menu .item {	
+    float: left;
+	width: 20%;
+}
+
+.menu a	{
+	font-size: 25px;
+    display: block;
+    text-align: center;
+	padding: 13px 0px 12px 0px;
+	font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    text-decoration: none;
+	color: #820000;
+}
+
+.menu ul li a:hover	{
+	background: #820000; 
+	color: white;
+}
+
+.main {
+	height: 700px;
+    margin:auto;
+    width: 70%;
+	background-color: white;	
+}
+
+.corpo	{
+	height: 700px;
+	background-color: white;	
+}
+
+.destaques {
+    margin: auto;
+}
+
+.destaques img {
+    width: 100%;
+    height: auto;
+}
+
+.divisor	{
+	background-color: black;
+	width: 100%;
+	height: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+	.login	{
+		position: absolute;
+		width: auto;
+		height: auto;
+		right: 0%;
+    	border-right: none;
+    	border-bottom-right-radius: 0px;
+	}	
+
+	.main 	{
+		width: 100%;
+		height: auto;
+	}
+
+	.menu 	{
+		height: auto;
+	    border-bottom: 0px solid #820000;
+	}
+
+	.menu ul	{		
+		width: 100%;
+	    border-bottom: 0px solid #820000;
+	}
+
+	.menu .item	{
+    	float: none;
+	    width: 100%;
+	    border-bottom: 3px solid #820000;
+	    display: none;
+	}
+
+	.icon	{
+    	float: none;
+	    display: block;
+	    width: 100%;
+	    border-bottom: 2px solid #820000;
+		display: block;
+	}
+
+}
+
+.item.expanditem	{	
+	display: block;
+}
+
+
