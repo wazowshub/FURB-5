@@ -1,0 +1,16 @@
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\bin\Debug\Compilador.exe
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\bin\Debug\Compilador.pdb
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Debug\Compilador.CompiladorView.resources
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Debug\Compilador.Properties.Resources.resources
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Debug\Compilador2008.csproj.GenerateResource.Cache
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Debug\Compilador.exe
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Debug\Compilador.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\obj\Debug\Compilador.CompiladorView.resources
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\obj\Debug\Compilador.Properties.Resources.resources
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\obj\Debug\Compilador2008.csproj.GenerateResource.Cache
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\bin\Debug\Compilador.exe
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\bin\Debug\Compilador.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\obj\Debug\Compilador.exe
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\obj\Debug\Compilador.pdb
+C:\Users\WazoNote\Documents\GitHub\FURB\Compiladores\Compilador2008\Compilador2008\Compilador2008\obj\Debug\Compilador2008.csprojResolveAssemblyReference.cache

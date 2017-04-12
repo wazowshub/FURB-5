@@ -1,0 +1,8 @@
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\bin\Release\Compilador.exe
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\bin\Release\Compilador.pdb
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Release\ResolveAssemblyReference.cache
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Release\Compilador.CompiladorView.resources
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Release\Compilador.Properties.Resources.resources
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Release\Compilador2008.csproj.GenerateResource.Cache
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Release\Compilador.exe
+C:\Users\programacao24\Documents\Maicon\Faculdade\5º Semestre\Compiladores\Compilador2008\Compilador2008\obj\Release\Compilador.pdb

@@ -1,0 +1,7 @@
+C:\Users\Maicon\Desktop\FURB-5\Compiladores\Compilador\obj\Release\Compilador.exe
+C:\Users\Maicon\Desktop\FURB-5\Compiladores\Compilador\obj\Release\Compilador.pdb
+C:\Users\Maicon\Desktop\FURB-5\Compiladores\Compilador\bin\Release\Compilador.exe
+C:\Users\Maicon\Desktop\FURB-5\Compiladores\Compilador\bin\Release\Compilador.pdb
+C:\Users\Maicon\Desktop\FURB-5\Compiladores\Compilador\obj\Release\Compilador.CompiladorView.resources
+C:\Users\Maicon\Desktop\FURB-5\Compiladores\Compilador\obj\Release\Compilador.Properties.Resources.resources
+C:\Users\Maicon\Desktop\FURB-5\Compiladores\Compilador\obj\Release\Compilador.csproj.GenerateResource.Cache
