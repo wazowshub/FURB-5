@@ -122,7 +122,7 @@ namespace AnalisadorLexico
 				}
             }
             if (endState < 0 || (endState != state && tokenForState(lastState) == -2))
-                throw new LexicalError(SCANNER_ERROR[lastState], linha, poslinha);
+                throw new LexicalError(SCANNER_ERROR[lastState], linha, poslinha, input.Substring(start, position - start));
 
             position = end;
 			poslinha = poslinha + poslinhaaux;

@@ -8,10 +8,12 @@ namespace AnalisadorLexico
     public class LexicalError : AnalysisError
     {
 		private int linha;
+		private string token;
 
-        public LexicalError(String msg, int linha, int position): base(msg, position)
+		public LexicalError(String msg, int linha, int position, string token): base(msg, position)
         {
 			this.linha = linha;
+			this.token = token;
         }
 
         public LexicalError(String msg): base(msg)
@@ -20,7 +22,7 @@ namespace AnalisadorLexico
 
 		public override String ToString()
 		{
-			return string.Format(base.Message, this.linha + "" , base.getPosition() + "");
+			return string.Format(base.Message, this.linha + "" , base.getPosition() + "", token);
 		}
 	}
 
