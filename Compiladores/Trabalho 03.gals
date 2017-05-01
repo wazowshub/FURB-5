@@ -1,0 +1,256 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+ScannerCaseSensitive = true
+ScannerTable = Compact
+Input = Stream
+Parser = LL
+#RegularDefinitions
+mai: [A-Z]
+min: [a-z]
+spc: [·¡‚¬„√‡¿È…Í ÌÕÓŒÛ”Ù‘ı’˙⁄˚€Á«]
+
+letra: {mai} | {min} | {spc}
+
+digito: [0-9]
+
+inteiro: 0 | [1-9] {digito}*
+
+str1: [^/]
+str2: [^/\*]
+#Tokens
+
+	// tokens genÈricos
+
+	identificador: {letra}(_?({letra}|{digito})+)*_?
+
+	constante_inteira: {inteiro}
+	constante_real: {inteiro}.{digito}+
+	constante_caracter: \" ([^ \\ \" \n] | \\ (\\ | \"))* \"
+	cmnt_bloco: /\* ({str1}*{str2}+ (/+{str2}+)* )* (\*)+ /
+	cmnt_linha: # [^\n]* \n
+	
+
+
+	// tokens especÌficos: palavras reservadas
+
+	algoritmo = identificador: "algoritmo"	
+	ate = identificador: "ate"	
+	caracter = identificador: "caracter"	
+	e = identificador: "e"	
+	enquanto = identificador: "enquanto"	
+	entao = identificador: "entao"	
+	escreva = identificador: "escreva"	
+	faca = identificador: "faca"	
+	falso = identificador: "falso"	
+	fim = identificador: "fim"	
+	funcao = identificador: "funcao"	
+	inicio = identificador: "inicio"	
+	inteiro = identificador: "inteiro"	
+	interrompa = identificador: "interrompa"	
+	leia = identificador: "leia"	
+	logico = identificador: "logico"	
+	nao = identificador: "nao"	
+	ou = identificador: "ou"	
+	procedimento = identificador: "procedimento"	
+	quebra = identificador: "quebra"	
+	real = identificador: "real"	
+	repita = identificador: "repita"	
+	retorne = identificador: "retorne"	
+	se = identificador: "se"	
+	senao = identificador: "senao"	
+	variaveis = identificador: "variaveis"	
+	verdadeiro = identificador: "verdadeiro"
+
+
+	// tokens especÌficos: sÌmbolos especiais
+
+	"+"
+	"-"
+	"*"
+	"/"
+	"\"
+	"%"
+	"^"
+	","
+	":"
+	";"
+	"<-"
+	"="
+	"<>"
+	"<"
+	"<="
+	">"
+	">="
+	"("
+	")"
+
+
+	// ignorar: caracteres de formataÁ„o e coment·rios
+
+	:[\s\t\n]
+	:cmnt_linha
+	:cmnt_bloco
+#NonTerminals
+<programa>
+
+<cabecalho_modulos>
+<variaveis>
+<opcional1>
+<opcional1_ext1> //ndd
+<lista_comandos>
+<comando>
+<lista_modulos>
+<modulo>
+<cabecalho>
+<lista_parametros>
+<opcional2>
+<opcional2_ext1> //ndd
+<parametro>
+<lista_identificadores>
+<lista_identificadores_ext1> //ndd
+<tipo>
+<variavel>
+<variavel_ext1> //ndd
+<cmd_atribuicao>
+<cmd_entrada>
+<cmd_saida>
+<lista_valores>
+<lista_valores_ext1> //ndd
+<valor>
+<cmd_selecao>
+<senao>
+<cmd_repeticao>
+<interrompa>
+<retorne>
+<chamada_modulo>
+<parametros_reais>
+<lista_expressoes>
+<lista_expressoes_ext1> //ndd
+<funcao>
+<procedimento>
+<expressao>
+<expressao_ext1> //re
+<elemento>
+<relacional>
+<relacional_ext1> //ndd
+<operador_relacional>
+<aritmetica>
+<aritmetica_ext1> //re
+<termo>
+<termo_ext1> //re
+<fator>
+#Grammar
+<programa> ::= 
+	algoritmo constante_caracter 
+		<cabecalho_modulos> 
+		<variaveis> 
+	inicio <lista_comandos> fim
+	<lista_modulos> ;
+
+<cabecalho_modulos> ::= <cabecalho> <cabecalho_modulos> | Ó ;
+
+<variaveis> ::= variaveis <opcional1> | Ó ;
+//<opcional1> ::= <variavel> <opcional1> | <variavel> ; n„o-determinismo direto
+<opcional1> ::= <variavel> <opcional1_ext1> ;
+<opcional1_ext1> ::= <opcional1> | Ó ;
+
+<lista_comandos> ::= <comando> ";" <lista_comandos> | Ó ;
+<comando> ::= <cmd_atribuicao> | <cmd_entrada> | <cmd_saida> | <cmd_selecao> | <cmd_repeticao> | <interrompa> | <retorne> | <chamada_modulo> ;
+
+<lista_modulos> ::= <modulo> <lista_modulos> | Ó ;
+<modulo> ::= <funcao> | <procedimento> ;
+
+
+
+
+
+<cabecalho> ::= funcao identificador "(" <lista_parametros> ")" ":" <tipo> ";" | procedimento identificador "(" <lista_parametros> ")" ";" ;
+
+<lista_parametros> ::= <opcional2> | Ó ;
+//<opcional2> ::= <parametro> ";" <opcional2> | <parametro> ; n„o-determinismo direto
+<opcional2> ::= <parametro> <opcional2_ext1> ;
+<opcional2_ext1> ::= ";" <opcional2> | Ó ;
+<parametro> ::= <lista_identificadores> ":" <tipo> ;
+
+//<lista_identificadores> ::= identificador "," <lista_identificadores> | identificador ; n„o-determinismo direto
+<lista_identificadores> ::= identificador <lista_identificadores_ext1> ;
+<lista_identificadores_ext1> ::= "," <lista_identificadores> | Ó ;
+<tipo> ::= caracter | logico | inteiro | real ;
+
+
+//<variavel> ::= <lista_identificadores> ":" <tipo> ";" <variavel> | <lista_identificadores> ":" <tipo> ";" ; n„o-determinismo direto
+<variavel> ::= <lista_identificadores> ":" <tipo> ";" <variavel_ext1> ;
+<variavel_ext1> ::= <variavel> | Ó ;
+
+
+
+<cmd_atribuicao> ::= identificador "<-" <expressao> ;
+
+
+<cmd_entrada> ::= leia "(" <lista_identificadores> ")" ;
+
+
+<cmd_saida> ::= escreva "(" <lista_valores> ")" ;
+
+
+//<lista_valores> ::= <valor> "," <lista_valores> | <valor> ; n„o-determinismo direto
+<lista_valores> ::= <valor> <lista_valores_ext1> ;
+<lista_valores_ext1> ::= "," <lista_valores> | Ó ;
+<valor> ::= <expressao> | quebra ;
+
+
+<cmd_selecao> ::= se <expressao> entao <lista_comandos> <senao> fim ;
+<senao> ::= senao <lista_comandos> | Ó ;
+
+
+<cmd_repeticao> ::= repita <lista_comandos> ate <expressao> ;
+
+
+<interrompa> ::= interrompa ;
+
+
+<retorne> ::= retorne <expressao> ;
+
+
+<chamada_modulo> ::= identificador "(" <parametros_reais> ")" ;
+<parametros_reais> ::= <lista_expressoes> | Ó ;
+//<lista_expressoes> ::= <expressao> "," <lista_expressoes> | <expressao> ; n„o-determinismo direto
+<lista_expressoes> ::= <expressao> <lista_expressoes_ext1> ;
+<lista_expressoes_ext1> ::= "," <lista_expressoes> | Ó ;
+
+
+<funcao> ::= 	funcao identificador "(" <lista_parametros> ")" ":" <tipo> ";"
+			<variaveis>
+		inicio <lista_comandos> fim ;
+
+
+<procedimento> ::= procedimento identificador "(" <lista_parametros> ")" ";"
+			<variaveis>
+		inicio <lista_comandos> fim ;
+
+
+//<expressao> ::= <expressao> e <elemento> | <expressao> ou <elemento> | <elemento> ; recurs„o ‡ esquerda
+<expressao> ::= <elemento> <expressao_ext1> ;
+<expressao_ext1> ::= Ó | e <elemento> <expressao_ext1> | ou <elemento> <expressao_ext1> ;
+
+<elemento> ::= <relacional> | verdadeiro | falso | nao <elemento> ;
+
+//<relacional> ::= <aritmetica> <operador_relacional> <aritmetica> | <aritmetica> ; n„o-determinismo direto
+<relacional> ::= <aritmetica> <relacional_ext1> ;
+<relacional_ext1> ::= <operador_relacional> <aritmetica> | Ó ;
+<operador_relacional> ::= "=" | "<>" | "<" | "<=" | ">" | ">=" ;
+
+//<aritmetica> ::= <aritmetica> "+" <termo> | <aritmetica> "-" <termo> | <termo> ; recurs„o ‡ esquerda
+<aritmetica> ::= <termo> <aritmetica_ext1> ;
+<aritmetica_ext1> ::= Ó | "+" <termo> <aritmetica_ext1> | "-" <termo> <aritmetica_ext1> ;
+
+//<termo> ::= <termo> "*" <fator> | <termo> "/" <fator> | <fator> ; recurs„o ‡ esquerda
+<termo> ::= <fator> <termo_ext1> ;
+<termo_ext1> ::= Ó | "*" <fator> <termo_ext1> | "/" <fator> <termo_ext1> ;
+
+<fator> ::= identificador | identificador "(" <parametros_reais> ")" | constante_inteira | constante_real | constante_caracter | "(" <expressao> ")" | "+" <fator> | "-" <fator> ;
