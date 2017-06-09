@@ -1,0 +1,92 @@
+REGISTROS SEMÂNTICOS
+
+ - TS (tabela de símbolos): cada tupla (registro) contém identificador e tipo.
+ 
+ - tipo : para armazenar o tipo do identificador (ação #22)
+
+ - lista_id: para armazenar os identificadores reconhecidos na ação #23
+ 
+ 
+ 
+	para cada id em lista_id faça
+		se TS.contém(id) então
+			erro semântico, id já declarado, parar
+		fim
+		
+		TS.adiciona(id, tipo)
+		código.adiciona(".locals("+tipo+id+")")
+	fim
+	lista_id.limpa
+ 
+ 
+ 
+DICAS
+
+
+	SE <EXPRESSAO> ENTÃO
+		<LSITA_CMD>
+	SENÃO
+		<LISTA_CMD>
+	FIMSE
+	
+	/** 
+	* Como saber onde os SENÃO e FIMSE estão localizados (usados caso <EXPRESSAO> for falsa)?
+	*/
+
+ 
+AÇÕES
+
+ação #22
+	tipo := token.getLexeme
+	
+ação #23
+	lista_id.adiciona(token.getLexeme)
+	
+ação #24
+	caso tipo
+		"int"  : tipo = "int64"
+		"real" : tipo = "float64"
+	fim
+	
+ação #25 //read()
+	para cada id em lista_id faça
+		se !TS.contém(id) então
+			erro semântico, id não declarado, parar
+		fim
+		
+		tipo = TS.recuperaTipo(id)
+		código.adiciona("call string ...readline()")
+		
+		caso tipo
+			"int64"   : código.adiciona("call int64 ...Int64::Parse(string)")
+			"float64" : código.adiciona("call float64...Double::Parse(string)")
+		fim
+		
+		código.adiciona("stloc"+id)
+	fim
+	
+	lista_id.limpa
+		
+ação #26
+	id := token.getLexeme
+	
+	se !TS.contém(id) então
+		erro semântico, id não declarado
+	fim
+	código.adiciona("ldloc"+id)
+	
+ação #27
+	id := lista_id.retira
+	
+	se !TS.contém(id) então
+		erro semântico, id não declarado
+	fim
+	
+	tipo_id := TS.recuperaTipo(id)
+	tipo_exp := pilha.desempilha
+	
+	se tipo_id != tipo_exp então
+		erro semântico, tipos incompatíveis em atribuição
+	fim
+	
+	código.adiciona("stloc"+id)
