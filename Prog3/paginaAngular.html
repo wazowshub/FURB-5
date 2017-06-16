@@ -1,0 +1,165 @@
+<html lang="en" >
+	<head>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script type="text/javascript">    
+			angular.module('firstApplication', ['ngMaterial'])
+			.controller('ListCtrl', function($scope, $mdDialog) {
+				$scope.bones = [
+					{ id: 1, descricao: 'Boné do Maicon', valor: '20.00', visible: false},
+					{ id: 2, descricao: 'Boné do Mateus 10/10', valor: '99.90', visible: false}
+				];
+				$scope.camisas = [
+					{ id: 1, descricao: 'Camisa do Maicon', valor: '30.00', visible: false},
+					{ id: 2, descricao: 'Camisa do Devas', valor: '44.90', visible: false},
+					{ id: 3, descricao: 'Camisa de qualquer carinha', valor: '29.90', visible: false},
+					{ id: 4, descricao: 'Camisa do Mateus 10/10', valor: '69.90', visible: false}
+				];
+				$scope.canecas = [
+					{ id: 1, descricao: 'Caneca do Estagiário', valor: '4.99', visible: false},
+					{ id: 2, descricao: 'Caneca do Analista', valor: '60.00', visible: false},
+					{ id: 3, descricao: 'Caneca do Maicon', valor: '30.00', visible: false},
+					{ id: 4, descricao: 'Caneca do Devas', valor: '44.90', visible: false},
+					{ id: 5, descricao: 'Caneca de qualquer carinha', valor: '29.90', visible: false},
+					{ id: 6, descricao: 'Caneca do Mateus (sempre 10/10)', valor: '189.90', visible: false}
+				];
+				
+				
+				$scope.excluirLinha = function(ev, tipo, id) {
+					var confirm = $mdDialog.show($mdDialog.confirm()
+						.title('Excluir '+tipo)
+						.textContent('Tem certeza que deseja excluir o produto '+id+'?')
+						.ariaLabel('Exclusao')
+						.targetEvent(ev)
+						.ok('Excluir')
+						.cancel('Cancelar'));
+					
+				};
+			});
+		</script>
+	</head>
+	<body ng-app="firstApplication" ng-cloak>
+		<div ng-cloak>
+			<md-content>
+				<md-tabs md-dynamic-height md-border-bottom>
+					<md-tab label="Clientes">
+						<md-content class="md-padding">
+							<h1 class="md-display-2">Clientes</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+						</md-content>
+					</md-tab>
+					<md-tab label="Produtos">
+						<md-content class="md-padding">
+							<md-tabs md-dynamic-height md-border-bottom>
+								<md-tab label="Bonés">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Bonés</h1>
+										<md-list ng-controller="ListCtrl" ng-cloak>
+											<md-content ng-repeat="bone in bones">
+											<md-list-item ng-click="bone.visible = !bone.visible">
+												<p>{{bone.id}}</p>
+												<p>{{bone.descricao}}</p>
+												<p>{{bone.valor}}</p>
+												<md-icon ng-click="excluirLinha($event, 'boné', bone.id)" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="bone.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="bone.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="bone.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="bone.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+								<md-tab label="Camisas">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Camisas</h1>
+										<md-list ng-controller="ListCtrl" ng-cloak>
+											<md-content ng-repeat="camisa in camisas">
+											<md-list-item ng-click="camisa.visible = !camisa.visible">
+												<p>{{camisa.id}}</p>
+												<p>{{camisa.descricao}}</p>
+												<p>{{camisa.valor}}</p>
+												<md-icon ng-click="excluirLinha($event, 'camisa', camisa.id)" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="camisa.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="camisa.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="camisa.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="camisa.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+								<md-tab label="Canecas">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Canecas</h1>
+										<md-list ng-controller="ListCtrl" ng-cloak>
+											<md-content ng-repeat="caneca in canecas">
+											<md-list-item ng-click="caneca.visible = !caneca.visible">
+												<p>{{caneca.id}}</p>
+												<p>{{caneca.descricao}}</p>
+												<p>{{caneca.valor}}</p>
+												<md-icon ng-click="excluirLinha($event, 'caneca', caneca.id)" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="caneca.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="caneca.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="caneca.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="caneca.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+							</md-tabs>
+						</md-content>
+					</md-tab>
+				</md-tabs>
+			</md-content>
+		</div>
+	</body>
+</html>
