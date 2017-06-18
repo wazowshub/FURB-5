@@ -10,16 +10,25 @@
 		<script type="text/javascript">    
 			angular.module('firstApplication', ['ngMaterial'])
 			.controller('ListCtrl', function($scope, $mdDialog) {
+				
+				$scope.clientes = [
+					{ id: 1, nome: 'Cliente 1', cpf: '09585126591', visible: false},
+					{ id: 2, nome: 'Cliente 2', cpf: '06451641223', visible: false},
+					{ id: 3, nome: 'Cliente 3', cpf: '08246688456', visible: false}
+				];
+				$scope.clientesId = $scope.clientes.length;
 				$scope.bones = [
 					{ id: 1, descricao: 'Boné do Maicon', valor: '20.00', visible: false},
 					{ id: 2, descricao: 'Boné do Mateus 10/10', valor: '99.90', visible: false}
 				];
+				$scope.bonesId = $scope.bones.length;
 				$scope.camisas = [
 					{ id: 1, descricao: 'Camisa do Maicon', valor: '30.00', visible: false},
 					{ id: 2, descricao: 'Camisa do Devas', valor: '44.90', visible: false},
 					{ id: 3, descricao: 'Camisa de qualquer carinha', valor: '29.90', visible: false},
 					{ id: 4, descricao: 'Camisa do Mateus 10/10', valor: '69.90', visible: false}
 				];
+				$scope.camisasId = $scope.camisas.length;
 				$scope.canecas = [
 					{ id: 1, descricao: 'Caneca do Estagiário', valor: '4.99', visible: false},
 					{ id: 2, descricao: 'Caneca do Analista', valor: '60.00', visible: false},
@@ -28,19 +37,76 @@
 					{ id: 5, descricao: 'Caneca de qualquer carinha', valor: '29.90', visible: false},
 					{ id: 6, descricao: 'Caneca do Mateus (sempre 10/10)', valor: '189.90', visible: false}
 				];
+				$scope.canecasId = $scope.canecas.length;
+				$scope.mousepads = [
+					{ id: 1, descricao: 'O único mousepad que presta', valor: '94.99', visible: false}
+				];
+				$scope.mousepadsId = $scope.mousepads.length;
 				
+				$scope.inserirLinha = function(tipo) {
+					switch(tipo){
+						case 'cliente':
+							$scope.clientesId = $scope.clientesId + 1;
+							$scope.clientes.push({"id": $scope.clientesId, "cpf": this.novo.cpf, "nome": this.novo.nome});
+						break;
+						case 'boné':
+							$scope.bonesId = $scope.bonesId + 1;
+							$scope.bones.push({"id": $scope.bonesId, "descricao": this.novo.descricao, "valor": this.novo.valor});
+						break;
+						case 'camisa':
+							$scope.camisasId = $scope.camisasId + 1;
+							$scope.camisas.push({"id": $scope.clientesId, "descricao": this.novo.descricao, "valor": this.novo.valor});
+						break;
+						case 'caneca':
+							$scope.canecasId = $scope.canecasId + 1;
+							$scope.canecas.push({"id": $scope.canecasId, "descricao": this.novo.descricao, "valor": this.novo.valor});
+						break;
+						case 'mousepad':
+							$scope.mousepadsId = $scope.mouspadsId + 1;
+							$scope.mousepads.push({"id": $scope.mousepadsId, "descricao": this.novo.descricao, "valor": this.novo.valor});
+						break;
+					}
+				}
 				
-				$scope.excluirLinha = function(ev, tipo, id) {
-					var confirm = $mdDialog.show($mdDialog.confirm()
-						.title('Excluir '+tipo)
-						.textContent('Tem certeza que deseja excluir o produto '+id+'?')
-						.ariaLabel('Exclusao')
-						.targetEvent(ev)
-						.ok('Excluir')
-						.cancel('Cancelar'));
-					
+				$scope.excluirLinha = function(tipo, index) {
+					switch(tipo){
+						case 'cliente':
+							$scope.clientes.splice(index, 1);
+							$scope.clientesId = $scope.clientesId - 1;
+						break;
+						case 'boné':
+							$scope.bones.splice(index, 1);
+							$scope.bonesId = $scope.bonesId - 1;
+						break;
+						case 'camisa':
+							$scope.camisas.splice(index, 1);
+							$scope.camisasId = $scope.camisasId - 1;
+						break;
+						case 'caneca':
+							$scope.canecas.splice(index, 1);
+							$scope.canecasId = $scope.canecasId - 1;
+						break;
+						case 'mousepad':
+							$scope.mousepads.splice(index, 1);
+							$scope.mousepadsId = $scope.mouspadsId - 1;
+						break;
+					}
+				}
+			})
+			.directive('ngConfirmClick', [
+			function() {
+				return {
+					link: function (scope, element, attr) {
+						var msg = attr.ngConfirmClick || "Are you sure?";
+						var clickAction = attr.confirmedClick;
+						element.bind('click', function (event) {
+							if (window.confirm(msg)) {
+								scope.$eval(clickAction)
+							}
+						});
+					}
 				};
-			});
+			}]);
 		</script>
 	</head>
 	<body ng-app="firstApplication" ng-cloak>
@@ -50,7 +116,53 @@
 					<md-tab label="Clientes">
 						<md-content class="md-padding">
 							<h1 class="md-display-2">Clientes</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+							<md-content layout-gt-sm="row" layout-padding>
+								<form ng-submit="inserirLinha('cliente')" ng-controller="ListCtrl">
+									<md-input-container>
+										<label>CPF</label>
+										<input ng-model="novo.cpf" ng-pattern="/[0-9]{11}/">
+									</md-input-container>
+									<md-input-container>
+										<label>Nome</label>
+										<input ng-model="novo.nome">
+									</md-input-container>
+									<md-input-container class="md-block">
+										<md-button class="md-raised md-primary" type="submit">Adicionar novo Cliente</md-button>
+									</md-input-container>
+								</form>
+							</md-content>
+							<md-list ng-controller="ListCtrl" ng-cloak>
+								<md-content ng-repeat="cliente in clientes">
+								<md-list-item ng-click="cliente.visible = !cliente.visible">
+									<p>{{cliente.id}}</p>
+									<p>{{cliente.cpf}}</p>
+									<p>{{cliente.nome}}</p>
+									<p>{{cliente.data_nasc}}</p>
+									<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('cliente', $index)" aria-label="Chat" class="md-secondary">delete</md-icon>
+								</md-list-item>
+								<md-list-item ng-show="cliente.visible">
+									<md-content layout-gt-sm="row" layout-padding>
+										<div>
+											<md-input-container class="md-block">
+												<label>ID</label>
+												<input ng-model="cliente.id" disabled>
+											</md-input-container>
+											<md-input-container>
+												<label>CPF</label>
+												<input ng-model="cliente.cpf" ng-pattern="/[0-9]{11}/">
+											</md-input-container>
+											<md-input-container>
+												<label>Nome</label>
+												<input ng-model="cliente.nome">
+											</md-input-container>
+											<md-input-container class="md-block">
+												<md-button class="md-raised md-primary" ng-click="cliente.visible = false">Salvar</md-button>
+											</md-input-container>
+										</div>
+									</md-content>
+								</md-list-item>
+								</md-content>
+							</md-list>
 						</md-content>
 					</md-tab>
 					<md-tab label="Produtos">
@@ -59,13 +171,28 @@
 								<md-tab label="Bonés">
 									<md-content class="md-padding">
 										<h1 class="md-display-2">Bonés</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<form ng-submit="inserirLinha('boné')" ng-controller="ListCtrl">
+												<md-input-container>
+													<label>Descrição</label>
+													<input ng-model="novo.descricao">
+												</md-input-container>
+												<md-input-container>
+													<label>Valor</label>
+													<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+												</md-input-container>
+												<md-input-container class="md-block">
+													<md-button class="md-raised md-primary" type="submit">Adicionar novo Boné</md-button>
+												</md-input-container>
+											</form>
+										</md-content>
 										<md-list ng-controller="ListCtrl" ng-cloak>
 											<md-content ng-repeat="bone in bones">
 											<md-list-item ng-click="bone.visible = !bone.visible">
 												<p>{{bone.id}}</p>
 												<p>{{bone.descricao}}</p>
 												<p>{{bone.valor}}</p>
-												<md-icon ng-click="excluirLinha($event, 'boné', bone.id)" aria-label="Chat" class="md-secondary">delete</md-icon>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('boné', $index)" aria-label="Chat" class="md-secondary">delete</md-icon>
 											</md-list-item>
 											<md-list-item ng-show="bone.visible">
 												<md-content layout-gt-sm="row" layout-padding>
@@ -82,6 +209,9 @@
 															<label>Valor</label>
 															<input ng-model="bone.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
 														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="bone.visible = false">Salvar</md-button>
+														</md-input-container>
 													</div>
 												</md-content>
 											</md-list-item>
@@ -92,13 +222,28 @@
 								<md-tab label="Camisas">
 									<md-content class="md-padding">
 										<h1 class="md-display-2">Camisas</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<form ng-submit="inserirLinha('camisa')" ng-controller="ListCtrl">
+												<md-input-container>
+													<label>Descrição</label>
+													<input ng-model="novo.descricao">
+												</md-input-container>
+												<md-input-container>
+													<label>Valor</label>
+													<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+												</md-input-container>
+												<md-input-container class="md-block">
+													<md-button class="md-raised md-primary" type="submit">Adicionar nova Camisa</md-button>
+												</md-input-container>
+											</form>
+										</md-content>
 										<md-list ng-controller="ListCtrl" ng-cloak>
 											<md-content ng-repeat="camisa in camisas">
 											<md-list-item ng-click="camisa.visible = !camisa.visible">
 												<p>{{camisa.id}}</p>
 												<p>{{camisa.descricao}}</p>
 												<p>{{camisa.valor}}</p>
-												<md-icon ng-click="excluirLinha($event, 'camisa', camisa.id)" aria-label="Chat" class="md-secondary">delete</md-icon>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('camisa', $index)" aria-label="Chat" class="md-secondary">delete</md-icon>
 											</md-list-item>
 											<md-list-item ng-show="camisa.visible">
 												<md-content layout-gt-sm="row" layout-padding>
@@ -115,6 +260,9 @@
 															<label>Valor</label>
 															<input ng-model="camisa.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
 														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="camisa.visible = false">Salvar</md-button>
+														</md-input-container>
 													</div>
 												</md-content>
 											</md-list-item>
@@ -125,13 +273,28 @@
 								<md-tab label="Canecas">
 									<md-content class="md-padding">
 										<h1 class="md-display-2">Canecas</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<form ng-submit="inserirLinha('boné')" ng-controller="ListCtrl">
+												<md-input-container>
+													<label>Descrição</label>
+													<input ng-model="novo.descricao">
+												</md-input-container>
+												<md-input-container>
+													<label>Valor</label>
+													<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+												</md-input-container>
+												<md-input-container class="md-block">
+													<md-button class="md-raised md-primary" type="submit">Adicionar nova Caneca</md-button>
+												</md-input-container>
+											</form>
+										</md-content>
 										<md-list ng-controller="ListCtrl" ng-cloak>
 											<md-content ng-repeat="caneca in canecas">
 											<md-list-item ng-click="caneca.visible = !caneca.visible">
 												<p>{{caneca.id}}</p>
 												<p>{{caneca.descricao}}</p>
 												<p>{{caneca.valor}}</p>
-												<md-icon ng-click="excluirLinha($event, 'caneca', caneca.id)" aria-label="Chat" class="md-secondary">delete</md-icon>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('caneca', $index)" aria-label="Chat" class="md-secondary">delete</md-icon>
 											</md-list-item>
 											<md-list-item ng-show="caneca.visible">
 												<md-content layout-gt-sm="row" layout-padding>
@@ -147,6 +310,60 @@
 														<md-input-container>
 															<label>Valor</label>
 															<input ng-model="caneca.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="caneca.visible = false">Salvar</md-button>
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+								<md-tab label="Mousepads">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Mousepads</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<form ng-submit="inserirLinha('boné')" ng-controller="ListCtrl">
+												<md-input-container>
+													<label>Descrição</label>
+													<input ng-model="novo.descricao">
+												</md-input-container>
+												<md-input-container>
+													<label>Valor</label>
+													<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+												</md-input-container>
+												<md-input-container class="md-block">
+													<md-button class="md-raised md-primary" type="submit">Adicionar novo Mousepad</md-button>
+												</md-input-container>
+											</form>
+										</md-content>
+										<md-list ng-controller="ListCtrl" ng-cloak>
+											<md-content ng-repeat="mousepad in mousepads">
+											<md-list-item ng-click="mousepad.visible = !mousepad.visible">
+												<p>{{mousepad.id}}</p>
+												<p>{{mousepad.descricao}}</p>
+												<p>{{mousepad.valor}}</p>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('mousepad', $index)" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="mousepad.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="mousepad.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="mousepad.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="mousepad.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="mousepad.visible = false">Salvar</md-button>
 														</md-input-container>
 													</div>
 												</md-content>
