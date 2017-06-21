@@ -1,0 +1,408 @@
+<html lang="en" >
+	<head>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  		<script src="https://code.jquery.com/jquery-3.2.0.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			angular.module('firstApplication', ['ngMaterial'])
+			.controller('ListCtrl', function($scope, $mdDialog, $http, $mdToast) {
+				$scope.abaAtual = "bones";
+				$scope.imagem = {}
+				$scope.carregar = function(m) {
+					if (m == '')	{
+						m = $scope.abaAtual;
+					}
+
+					if (m != 'clientes'){
+						$scope.abaAtual = m;
+					}
+					if (m != 'clientes')	{
+						$http.get("produtos/" + m).then(function(response) {
+								if (m == 'bones')	{
+									$scope.bones = response.data;
+								} else if (m == 'camisas')	{
+									$scope.camisas = response.data;
+								} else if (m == 'canecas')	{
+									$scope.canecas = response.data;
+								} else if (m == 'mousepads')	{
+									$scope.mousepads = response.data;
+								};
+						});
+					};
+					if (m == 'clientes')	{
+						$http.get("clientes/").then(function(response) {
+							$scope.clientes = response.data;
+						});
+					};
+				};
+
+				$scope.clientes = [];
+				$scope.bones = [];
+				$scope.camisas = [];
+				$scope.canecas = [];
+				$scope.mousepads = [];
+
+				$scope.inserirLinha = function(tipo) {
+					var nomeProduto = this.novo.descricao;
+					switch(tipo){
+						case 'boné':
+							$http.post('produto/', {"descricao": this.novo.descricao, "valor": this.novo.valor, "tipo" : 0, "imagem": $scope.novo.imagem }).then($scope.carregar('bones'));
+							this.novo = '';
+							$scope.carregar('bones');
+						break;
+						case 'camisa':
+							$http.post('produto/', {"descricao": this.novo.descricao, "valor": this.novo.valor, "tipo" : 1, "imagem": $scope.novo.imagem }).then($scope.carregar('camisas'));
+							this.novo = '';
+							$scope.carregar('camisas');
+						break;
+						case 'caneca':
+							$http.post('produto/', {"descricao": this.novo.descricao, "valor": this.novo.valor, "tipo" : 2, "imagem": $scope.novo.imagem }).then($scope.carregar('canecas'));
+							this.novo = '';
+							$scope.carregar('canecas');
+						break;
+						case 'mousepad':
+							$http.post('produto/', {"descricao": this.novo.descricao, "valor": this.novo.valor, "tipo" : 3, "imagem": $scope.novo.imagem }).then($scope.carregar('mousepads'));
+							this.novo = '';
+							$scope.carregar('mousepads');
+						break;
+					}
+					
+					$mdToast.show(
+						$mdToast.simple()
+							.textContent('O produto '+nomeProduto+' foi inserido com sucesso!')
+							.position('top right')
+							.hideDelay(3000)
+					);
+				}
+
+				$scope.editar = function(tipo)	{
+					switch(tipo){
+						case 'boné':
+							$http.put('produto/' + this.bone.id, {"descricao": this.bone.descricao, "valor": this.bone.valor, "tipo" : 0 }).then($scope.carregar('bones'));
+							$scope.carregar('bones');
+						break;
+						case 'camisa':
+							$http.put('produto/' + this.camisa.id, {"descricao": this.camisa.descricao, "valor": this.camisa.valor, "tipo" : 1 }).then($scope.carregar('camisas'));
+							$scope.carregar('camisas');
+						break;
+						case 'caneca':
+							$http.put('produto/' + this.caneca.id, {"descricao": this.caneca.descricao, "valor": this.caneca.valor, "tipo" : 2 }).then($scope.carregar('canecas'));
+							$scope.carregar('canecas');
+						break;
+						case 'mousepad':
+							$http.put('produto/' + this.mousepad.id, {"descricao": this.mousepad.descricao, "valor": this.mousepad.valor, "tipo" : 3 }).then($scope.carregar('mousepads'));
+							$scope.carregar('mousepads');
+						break;
+					}
+				}
+
+				$scope.excluirLinha = function(codigo, tipo) {
+					switch(tipo){
+						case 'cliente':
+							$http.get('deleteCliente/' + codigo).then($scope.carregar('clientes'));
+							$scope.carregar('clientes');
+						break;
+						case 'boné':
+							$http.delete('produto/' + codigo).then($scope.carregar('bones'));
+							$scope.carregar('bones');
+						break;
+						case 'camisa':
+							$http.delete('produto/' + codigo).then($scope.carregar('camisas'));
+							$scope.carregar('camisas');
+						break;
+						case 'caneca':
+							$http.delete('produto/' + codigo).then($scope.carregar('canecas'));
+							$scope.carregar('canecas');
+						break;
+						case 'mousepad':
+							$http.delete('produto/' + codigo).then($scope.carregar('mousepads'));
+							$scope.carregar('mousepads');
+						break;
+					}
+					
+					$mdToast.show(
+						$mdToast.simple()
+							.textContent('O produto de código '+codigo+' foi excluído com sucesso!')
+							.position('top right')
+							.hideDelay(3000)
+					);
+				}
+			})
+			.directive("fileread", [function () {
+				return {
+					scope: {
+						fileread: "="
+					},
+					link: function (scope, element, attributes) {
+						element.bind("change", function (changeEvent) {
+							var reader = new FileReader();
+							reader.onload = function (loadEvent) {
+								scope.$apply(function () {
+									scope.fileread = loadEvent.target.result;
+								});
+							}
+							reader.readAsDataURL(changeEvent.target.files[0]);
+						});
+					}
+				}
+			}])
+			.directive('ngConfirmClick', [
+			function() {
+				return {
+					link: function (scope, element, attr) {
+						var msg = attr.ngConfirmClick || "Are you sure?";
+						var clickAction = attr.confirmedClick;
+						element.bind('click', function (event) {
+							if (window.confirm(msg)) {
+								scope.$eval(clickAction)
+							}
+						});
+					}
+				};
+			}]);
+		</script>
+	</head>
+	<body ng-app="firstApplication" ng-cloak>
+		<div ng-cloak ng-controller="ListCtrl">
+			<md-content>
+				<md-tabs md-dynamic-height md-border-bottom>
+					<md-tab label="Clientes" md-on-select="carregar('clientes')">
+						<md-content class="md-padding">
+							<h1 class="md-display-2">Clientes</h1>
+							<md-list ng-cloak>
+								<md-content ng-repeat="cliente in clientes">
+								<md-list-item>
+									<p>{{cliente.id}}</p>
+									<p>{{cliente.cpf}}</p>
+									<p>{{cliente.nome}}</p>
+									<p>{{cliente.data_nasc}}</p>
+									<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('{{cliente.id}}', 'cliente')" aria-label="Chat" class="md-secondary">delete</md-icon>
+								</md-list-item>
+								</md-content>
+							</md-list>
+						</md-content>
+					</md-tab>
+					<md-tab label="Produtos" md-on-select="carregar('')">
+						<md-content class="md-padding">
+							<md-tabs md-dynamic-height md-border-bottom>
+								<md-tab label="Bonés"  md-on-select="carregar('bones')">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Bonés</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<md-input-container>
+												<label>Descrição</label>
+												<input ng-model="novo.descricao" required>
+											</md-input-container>
+											<md-input-container>
+												<label>Valor</label>
+												<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/" required>
+											</md-input-container>
+											<md-input-container>
+											<input fileread="novo.imagem" type="file" required>
+											</md-input-container>
+											<md-input-container class="md-block">
+												<md-button class="md-raised md-primary" ng-click="inserirLinha('boné')">Adicionar novo Boné</md-button>
+											</md-input-container>
+										</md-content>
+										<md-list ng-cloak>
+											<md-content ng-repeat="bone in bones">
+											<md-list-item ng-click="bone.visible = !bone.visible">
+												<p>{{bone.id}}</p>
+												<p>{{bone.descricao}}</p>
+												<p>{{bone.valor}}</p>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('{{bone.id}}', 'boné')" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="bone.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="bone.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="bone.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="bone.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="editar('boné')">Salvar</md-button>
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+								<md-tab label="Camisas"  md-on-select="carregar('camisas')">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Camisas</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<md-input-container>
+												<label>Descrição</label>
+												<input ng-model="novo.descricao">
+											</md-input-container>
+											<md-input-container>
+												<label>Valor</label>
+												<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+											</md-input-container>
+											<md-input-container>
+											<input fileread="novo.imagem" type="file" required>
+											</md-input-container>
+											<md-input-container class="md-block">
+												<md-button class="md-raised md-primary" ng-click="inserirLinha('camisa')">Adicionar nova Camisa</md-button>
+											</md-input-container>
+										</md-content>
+										<md-list ng-cloak>
+											<md-content ng-repeat="camisa in camisas">
+											<md-list-item ng-click="camisa.visible = !camisa.visible">
+												<p>{{camisa.id}}</p>
+												<p>{{camisa.descricao}}</p>
+												<p>{{camisa.valor}}</p>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('{{camisa.id}}', 'camisa')" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="camisa.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="camisa.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="camisa.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="camisa.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="editar('camisa')">Salvar</md-button>
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+								<md-tab label="Canecas"  md-on-select="carregar('canecas')">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Canecas</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<md-input-container>
+												<label>Descrição</label>
+												<input ng-model="novo.descricao">
+											</md-input-container>
+											<md-input-container>
+												<label>Valor</label>
+												<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+											</md-input-container>
+											<md-input-container>
+											<input fileread="novo.imagem" type="file" required>
+											</md-input-container>
+											<md-input-container class="md-block">
+												<md-button class="md-raised md-primary" ng-click="inserirLinha('caneca')">Adicionar nova Caneca</md-button>
+											</md-input-container>
+										</md-content>
+										<md-list ng-cloak>
+											<md-content ng-repeat="caneca in canecas">
+											<md-list-item ng-click="caneca.visible = !caneca.visible">
+												<p>{{caneca.id}}</p>
+												<p>{{caneca.descricao}}</p>
+												<p>{{caneca.valor}}</p>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('{{caneca.id}}', 'caneca')" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="caneca.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="caneca.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="caneca.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="caneca.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="editar('caneca')">Salvar</md-button>
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+								<md-tab label="Mousepads"  md-on-select="carregar('mousepads')">
+									<md-content class="md-padding">
+										<h1 class="md-display-2">Mousepads</h1>
+										<md-content layout-gt-sm="row" layout-padding>
+											<md-input-container>
+												<label>Descrição</label>
+												<input ng-model="novo.descricao">
+											</md-input-container>
+											<md-input-container>
+												<label>Valor</label>
+												<input ng-model="novo.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+											</md-input-container>
+											<md-input-container>
+											<input fileread="novo.imagem" type="file" required>
+											</md-input-container>
+											<md-input-container class="md-block">
+												<md-button class="md-raised md-primary" ng-click="inserirLinha('mousepad')">Adicionar novo Mousepad</md-button>
+											</md-input-container>
+										</md-content>
+										<md-list ng-cloak>
+											<md-content ng-repeat="mousepad in mousepads">
+											<md-list-item ng-click="mousepad.visible = !mousepad.visible">
+												<p>{{mousepad.id}}</p>
+												<p>{{mousepad.descricao}}</p>
+												<p>{{mousepad.valor}}</p>
+												<md-icon ng-click="" ng-confirm-click="Tem certeza que deseja excluir?" confirmed-click="excluirLinha('{{mousepad.id}}', 'mousepad')" aria-label="Chat" class="md-secondary">delete</md-icon>
+											</md-list-item>
+											<md-list-item ng-show="mousepad.visible">
+												<md-content layout-gt-sm="row" layout-padding>
+													<div>
+														<md-input-container class="md-block">
+															<label>ID</label>
+															<input ng-model="mousepad.id" disabled>
+														</md-input-container>
+														<md-input-container>
+															<label>Descrição</label>
+															<input ng-model="mousepad.descricao">
+														</md-input-container>
+														<md-input-container>
+															<label>Valor</label>
+															<input ng-model="mousepad.valor" ng-pattern="/[0-9]+\.[0-9][0-9]+/">
+														</md-input-container>
+														<md-input-container class="md-block">
+															<md-button class="md-raised md-primary" ng-click="editar('mousepad')">Salvar</md-button>
+														</md-input-container>
+													</div>
+												</md-content>
+											</md-list-item>
+											</md-content>
+										</md-list>
+									</md-content>
+								</md-tab>
+							</md-tabs>
+						</md-content>
+					</md-tab>
+				</md-tabs>
+			</md-content>
+		</div>
+	</body>
+</html>
